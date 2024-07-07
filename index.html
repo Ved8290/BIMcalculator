@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Fill Fun </title>
+    <style>
+        #box{
+           border: 0.2rem solid black;
+           text-align: center;
+           justify-content: center;
+           align-items: center;
+           padding: 120px;
+           width: 600px;
+           margin: auto;
+           margin-top: 80px;
+        }
+        h1{
+            color: blueviolet;
+        }
+        #btn{
+            font-size: 19px;
+            padding: 8px;
+            width: 120px;
+            background-color: blueviolet;
+            color: white;
+            border-radius: 20px;
+            border-color: transparent;
+        }
+        #btn:hover{
+            cursor: pointer; 
+        }
+        #show{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="box">
+        <h1>BIM Calculator :</h1>
+       <div id="show">
+        <label>Your BIM:</label> <input id="bimval" type="text"/>
+       </div>
+        <br> <br>
+        <label>Height</label>
+        <input id="height" type="number" placeholder="Height in meters only" />
+            <br><br>
+        <label>Weight</label>
+        <input id="weight" type="number" placeholder="Weight in kilogram only" />
+        <br><br>
+        <button id="btn">Calculate</button>
+     </div>
+     
+<script>
+    let height=document.getElementById('height');
+    let weight=document.getElementById('weight');
+    let show=document.getElementById('show');
+    let bimval=document.getElementById('bimval');
+    document.getElementById('btn').addEventListener('click',()=>{
+   
+    console.log("height :",height.value);
+    console.log("Weight :",weight.value);
+    let bim= weight.value/(height.value*height.value).toFixed(2);
+     console.log("BIM :",bim);
+     let ans=parseFloat(bim.toFixed(2));
+     console.log(ans);
+
+     show.style.display='block'
+     bimval.value=ans;
+    })
+
+</script>
+    
+</body>
+</html>
